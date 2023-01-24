@@ -1,6 +1,9 @@
 package ca.vanier.customersapi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +22,11 @@ public class CustomerController {
     @PostMapping("/save")
     public Customer save(@RequestBody Customer customer) {
         return customerService.save(customer);
+    }
+
+    @GetMapping("/list")
+    public List<Customer> listTestLeo() {
+        return customerService.findAll();
     }
 
 }
