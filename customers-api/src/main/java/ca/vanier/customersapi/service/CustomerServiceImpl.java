@@ -14,7 +14,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
-    private Optional<Customer> findById;
 
     @Override
     public Customer save(Customer customer) {
