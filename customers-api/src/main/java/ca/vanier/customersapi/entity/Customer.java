@@ -17,8 +17,11 @@ public class Customer {
     private String name;
     private String email;
 
+    // TODO: Improve it to OneToMany
     @OneToOne(cascade = CascadeType.ALL)
+    // Please, connect this two columns and give me...
     @JoinColumn(name="address_id", referencedColumnName = "id")
+    // This object :)
     private CustomerAddress address;
 
     public Long getId() {
