@@ -1,13 +1,15 @@
 package ca.vanier.customersapi.entity;
 
-import jakarta.persistence.CascadeType;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="CUSTOMER")
 public class Customer {
     
     @Id
@@ -18,11 +20,8 @@ public class Customer {
     private String email;
 
     // TODO: Improve it to OneToMany
-    @OneToOne(cascade = CascadeType.ALL)
-    // Please, connect this two columns and give me...
-    @JoinColumn(name="address_id", referencedColumnName = "id")
-    // This object :)
-    private CustomerAddress address;
+    @OneToMany(mappedBy="addresses")
+    private Set<CustomerAddress> addresses;
 
     public Long getId() {
         return id;
@@ -42,11 +41,11 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
-    public CustomerAddress getAddress() {
-        return address;
+    public Set<CustomerAddress> getAddresses() {
+        return addresses;
     }
-    public void setAddress(CustomerAddress address) {
-        this.address = address;
+    public void setAddresses(Set<CustomerAddress> addresses) {
+        this.addresses = addresses;
     }
 
 }
