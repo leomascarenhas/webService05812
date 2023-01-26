@@ -1,27 +1,26 @@
 package ca.vanier.customersapi.entity;
 
-import java.util.Set;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name="CUSTOMER")
 public class Customer {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
     private String name;
     private String email;
 
-    // TODO: Improve it to OneToMany
-    @OneToMany(mappedBy="addresses")
-    private Set<CustomerAddress> addresses;
+    @OneToMany(cascade=CascadeType.ALL)
+    private List<CustomerAddress> addresses;
 
     public Long getId() {
         return id;
@@ -41,10 +40,10 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Set<CustomerAddress> getAddresses() {
+    public List<CustomerAddress> getAddresses() {
         return addresses;
     }
-    public void setAddresses(Set<CustomerAddress> addresses) {
+    public void setAddresses(List<CustomerAddress> addresses) {
         this.addresses = addresses;
     }
 
