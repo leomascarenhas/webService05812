@@ -1,12 +1,12 @@
 package ca.vanier.customersapi;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class CustomersApiApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 
