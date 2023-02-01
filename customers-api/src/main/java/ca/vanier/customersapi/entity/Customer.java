@@ -2,6 +2,7 @@ package ca.vanier.customersapi.entity;
 
 import java.util.List;
 
+import ca.vanier.addresses.entity.Address;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +21,7 @@ public class Customer {
     private String email;
 
     @OneToMany(cascade=CascadeType.ALL)
-    private List<CustomerAddress> addresses;
+    private List<Address> addresses;
 
     public Long getId() {
         return id;
@@ -40,10 +41,10 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
-    public List<CustomerAddress> getAddresses() {
+    public List<Address> getAddresses() {
         return addresses;
     }
-    public void setAddresses(List<CustomerAddress> addresses) {
+    public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
     }
 
