@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>ca.vanier</groupId>
 			<artifactId>addresses-lib</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
+			<version>0.0.3-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

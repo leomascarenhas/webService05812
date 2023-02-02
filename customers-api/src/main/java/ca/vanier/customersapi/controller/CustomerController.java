@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ca.vanier.addresses.utils.Constants;
 import ca.vanier.customersapi.entity.Customer;
 import ca.vanier.customersapi.service.CustomerService;
 
@@ -49,6 +50,11 @@ public class CustomerController {
 
         customerService.deleteById(id);
         return "Success";
+    }
+
+    @GetMapping(Constants.ADDR_PATH)
+    public String isItAddressesKey() {
+        return "Yes!";
     }
 
 }
