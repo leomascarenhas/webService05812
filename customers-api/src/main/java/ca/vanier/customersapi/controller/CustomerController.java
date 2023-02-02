@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.vanier.addresses.utils.Constants;
+import ca.vanier.addresses.utils.Helpers;
 import ca.vanier.customersapi.entity.Customer;
 import ca.vanier.customersapi.service.CustomerService;
 
@@ -21,7 +22,7 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
-    
+
     @PostMapping("/save")
     public Customer save(@RequestBody Customer customer) {
         return customerService.save(customer);
@@ -54,7 +55,7 @@ public class CustomerController {
 
     @GetMapping(Constants.ADDR_PATH)
     public String isItAddressesKey() {
-        return "Yes!";
+        return Helpers.createAddressesEndpoint(Constants.ADDR_PATH);
     }
 
 }
