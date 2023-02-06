@@ -44,13 +44,32 @@ public class ApplicationSecurityConfiguration {
         return http.build();
     }
 
+    // Spring Context
+    // UserDetailsService // user | {generated password}
+
+    // EXAMPLE: You can imagine that the following code is
+    // the default implementation by Spring boot security
+    // in case we don't provide our own implementation
+    //
+    // @Bean
+    // public UserDetailsService userDetailsService() {
+    // String password = methodGeneratePassword();
+    //     UserDetails user = User.withUsername("user")
+    //             .password(password})
+    //             .roles("USER")
+    //             .build();
+    //
+    // Hey! this is your password:
+    // print(password)
+    //     return new InMemoryUserDetailsManager(user);
+    // }
+
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("student")
                 .password(passwordEncoder.encode("password"))
                 .roles("USER")
                 .build();
-
         return new InMemoryUserDetailsManager(user);
     }
 
