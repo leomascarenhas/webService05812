@@ -4,6 +4,7 @@ import java.util.List;
 
 import ca.vanier.addresses.entity.Address;
 import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Customer {
     private Long id;
     
     private String name;
-    private String email;
+                                        private String email;
 
     @OneToMany(cascade=CascadeType.ALL)
     private List<Address> addresses;

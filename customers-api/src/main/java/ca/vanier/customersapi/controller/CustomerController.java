@@ -15,6 +15,7 @@ import ca.vanier.addresses.utils.Constants;
 import ca.vanier.addresses.utils.Helpers;
 import ca.vanier.customersapi.entity.Customer;
 import ca.vanier.customersapi.service.CustomerService;
+import ca.vanier.utils.NameItHelper;
 
 @RestController
 @RequestMapping("/customer")
@@ -56,6 +57,11 @@ public class CustomerController {
     @GetMapping(Constants.ADDR_PATH)
     public String isItAddressesKey() {
         return Helpers.createAddressesEndpoint(Constants.ADDR_PATH);
+    }
+
+    @GetMapping("/testnl")
+    public String testNewLib() {
+        return NameItHelper.baseMyPath("leo/test/hahaha");
     }
 
 }

@@ -46,11 +46,16 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-		<dependency>
+		 <dependency>
 			<groupId>ca.vanier</groupId>
 			<artifactId>addresses-lib</artifactId>
-			<version>0.0.5-SNAPSHOT</version>
-		</dependency>
+			<version>0.0.10-SNAPSHOT</version>
+		 </dependency>
+		 <dependency>
+			<groupId>ca.vanier</groupId>
+			<artifactId>nameit-lib</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		 </dependency>
 	</dependencies>
 
 	<build>
