@@ -4,9 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
+
 class HelpersTest {
 
     @Test
+    @DisplayName("Test our happy...")
     public void testHappyPath() throws Exception {
         String endpoint = Helpers.createAddressesEndpoint("lalala");
 

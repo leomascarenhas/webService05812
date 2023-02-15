@@ -19,7 +19,7 @@ public class Customer {
     private Long id;
     
     private String name;
-                                        private String email;
+    private String email;
 
     @OneToMany(cascade=CascadeType.ALL)
     private List<Address> addresses;

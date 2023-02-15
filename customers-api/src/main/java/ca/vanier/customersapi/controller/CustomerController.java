@@ -55,7 +55,7 @@ public class CustomerController {
     }
 
     @GetMapping(Constants.ADDR_PATH)
-    public String isItAddressesKey() {
+    public String isItAddressesKey() throws Exception {
         return Helpers.createAddressesEndpoint(Constants.ADDR_PATH);
     }
 
